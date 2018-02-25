@@ -21,5 +21,12 @@ pipeline {
 				bat("Wscript C:\\Devaraj\\Test\\c.vbs")
 			}
 		}
+		
+		stage('D')
+		{
+			steps{
+				bat("Wscript C:\\Devaraj\\Test\\d.vbs")
+			}
+		}
     }
 }
