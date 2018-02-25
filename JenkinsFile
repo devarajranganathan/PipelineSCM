@@ -1,11 +1,25 @@
 pipeline {
     agent any 
     stages {
-        stage('Stage 1') {
+        stage('A') {
             steps {
                 //echo 'Hello world - Run 3!' 
                 bat("Wscript C:\\Devaraj\\Test\\a.vbs")
             }
         }
+		
+		stage('B')
+		{
+			steps{
+				bat("Wscript C:\\Devaraj\\Test\\b.vbs")
+			}
+		}
+		
+		stage('C')
+		{
+			steps{
+				bat("Wscript C:\\Devaraj\\Test\\c.vbs")
+			}
+		}
     }
 }
