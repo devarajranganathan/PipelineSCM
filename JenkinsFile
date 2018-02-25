@@ -50,5 +50,12 @@ pipeline {
                 bat("${strPath}" + "${strFileName}")
 			}
 		}
+		
+		stage('Build MultiJob - A')
+		{
+			steps{
+				build "MultiJob_Jobs/A"
+			}
+		}
     }
 }
