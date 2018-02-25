@@ -1,31 +1,53 @@
 pipeline {
     agent any 
+	
+	environment{
+		strPath = "C:\\Devaraj\\Test\\"
+	}
+	
+	
     stages {
         stage('A') {
             steps {
-                //echo 'Hello world - Run 3!' 
-                bat("Wscript C:\\Devaraj\\Test\\a.vbs")
+			
+				script{
+					strFileName = "a.vbs"
+				}
+				
+                bat("${strFileName} + ${strPath}")
             }
         }
 		
 		stage('B')
 		{
 			steps{
-				bat("Wscript C:\\Devaraj\\Test\\b.vbs")
+				script{
+					strFileName = "b.vbs"
+				}
+				
+                bat("${strFileName} + ${strPath}")
 			}
 		}
 		
 		stage('C')
 		{
 			steps{
-				bat("Wscript C:\\Devaraj\\Test\\c.vbs")
+				script{
+					strFileName = "c.vbs"
+				}
+				
+                bat("${strFileName} + ${strPath}")
 			}
 		}
 		
 		stage('D')
 		{
 			steps{
-				bat("Wscript C:\\Devaraj\\Test\\d.vbs")
+				script{
+					strFileName = "d.vbs"
+				}
+				
+                bat("${strFileName} + ${strPath}")
 			}
 		}
     }
